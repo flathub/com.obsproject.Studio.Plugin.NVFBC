@@ -11,13 +11,11 @@ build-options:
 modules:
   - name: nvfbc
     buildsystem: meson
-    build-options:
-      cflags: -D_GNU_SOURCE
     sources:
       - type: git
         url: https://gitlab.com/fzwoch/obs-nvfbc.git
-        tag: v0.0.4
-        commit: 6129e316ae5139a2eb2cabc893b584c6dfaf4771
+        tag: v0.0.5
+        commit: 7425e6eb0fca5d3172a797bc1719f3c48baea3d0
   - name: appdata
     buildsystem: simple
     build-commands:
