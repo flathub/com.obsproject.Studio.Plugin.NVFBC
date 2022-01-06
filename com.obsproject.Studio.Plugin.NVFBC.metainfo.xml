@@ -2,8 +2,8 @@
 <component type="addon">
   <id>com.obsproject.Studio.Plugin.NVFBC</id>
   <extends>com.obsproject.Studio</extends>
-  <name>NVFBC plugin for OBS Studio</name>
-  <summary>OBS Studio source plugin using NVIDIA's FBC API for Linux.</summary>
+  <name>NvFBC Plugin</name>
+  <summary>Capture the desktop using NVIDIA's NvFBC API.</summary>
   <url type="homepage">https://gitlab.com/fzwoch/obs-nvfbc</url>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0</project_license>
