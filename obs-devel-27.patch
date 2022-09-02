@@ -1,0 +1,16 @@
+diff --git a/meson.build b/meson.build
+index 2d45c58..1a71eaa 100644
+--- a/meson.build
++++ b/meson.build
+@@ -1,7 +1,10 @@
+ project('obs-nvfbc', 'c', default_options: ['c_std=c99'])
+ 
+ threads = dependency('threads')
+-obs = meson.get_compiler('c').find_library('obs')
++obs = declare_dependency(
++  link_args : ['-L' + meson.source_root() + '/obs-devel-27/usr/lib64/', '-lobs'],
++  include_directories : ['obs-devel-27/usr/include']
++)
+ gl = dependency('gl')
+ if target_machine.system() != 'windows'
+     x11 = dependency('x11')
