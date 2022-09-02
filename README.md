@@ -1,3 +1,20 @@
+# Deprecation notice
+
+As of OBS version 28.0.0 (released in 2022-09-01), this plugin no longer works. You can find more details as to why [here](https://gitlab.com/fzwoch/obs-nvfbc/-/issues/6#note_1071642813).
+
+If you really want to use this plugin, you will have to downgrade OBS back to version 27.2.4, using this command:
+
+```bash
+# Remove 'sudo' if you installed OBS only for the current user.
+sudo flatpak update --commit=0069ec300ce09337a585acfcefe0f2ecdfa0efcd08d920b2751c844fd026296a com.obsproject.Studio
+```
+
+And then you'll have to disable Flatpak from auto-updating OBS with:
+
+```bash
+flatpak mask com.obsproject.Studio
+```
+
 # NVFBC plugin for OBS Studio (Flatpak)
 
 This plugin will be useless for you, unless you have a Tesla/Quadro GPU from NVIDIA, **or** patched NVIDIA drivers.
