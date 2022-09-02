@@ -10,12 +10,28 @@ build-options:
   prefix: /app/plugins/NVFBC
 modules:
   - name: nvfbc
-    buildsystem: meson
+    buildsystem: simple
+    build-commands:
+      - mkdir obs-devel-27
+      - bsdtar -xf obs-headers-27.rpm -C obs-devel-27
+      - bsdtar -xf obs-libs-27.rpm -C obs-devel-27
+      - meson builddir --prefix=/app/plugins/NVFBC
+      - ninja -C builddir install
     sources:
       - type: git
         url: https://gitlab.com/fzwoch/obs-nvfbc.git
-        tag: v0.0.6
-        commit: fa70f1bcd60145b0e8cdaa600b366adf127af3aa
+        tag: v0.0.7
+        commit: dda5bf49c316a7c5603b7f86dc19b62794d5e588
+      - type: file
+        dest-filename: obs-headers-27.rpm
+        url: https://download1.rpmfusion.org/free/el/updates/8/x86_64/o/obs-studio-devel-27.2.1-1.el8.x86_64.rpm
+        sha256: 789cf76cc184938ff6e8099864ddf78092ce3a5596609dc3e0408d2265079167
+      - type: file
+        dest-filename: obs-libs-27.rpm
+        url: https://download1.rpmfusion.org/free/el/updates/8/x86_64/o/obs-studio-libs-27.2.1-1.el8.x86_64.rpm
+        sha256: 4033b47fe0ab68adadd2e86efa8d056d4cbdd8463fb192d9286d8624c59be5a8
+      - type: patch
+        path: obs-devel-27.patch
   - name: appdata
     buildsystem: simple
     build-commands:
