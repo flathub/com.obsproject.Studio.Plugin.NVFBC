@@ -14,8 +14,8 @@ modules:
     sources:
       - type: git
         url: https://gitlab.com/fzwoch/obs-nvfbc.git
-        tag: v0.0.6
-        commit: fa70f1bcd60145b0e8cdaa600b366adf127af3aa
+        tag: v0.0.7
+        commit: dda5bf49c316a7c5603b7f86dc19b62794d5e588
   - name: appdata
     buildsystem: simple
     build-commands:
