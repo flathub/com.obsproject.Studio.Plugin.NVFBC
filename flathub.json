@@ -1,4 +1,5 @@
 {
   "skip-icons-check": true,
-  "only-arches": ["x86_64"]
+  "only-arches": ["x86_64"],
+  "end-of-life": "This plugin no longer works. Learn more: https://gitlab.com/fzwoch/obs-nvfbc/-/issues/6"
 }
